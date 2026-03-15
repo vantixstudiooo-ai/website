@@ -1,109 +1,200 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>My Website</title>
+
+<title>Vantix</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 
 body{
 margin:0;
-font-family:Arial, sans-serif;
-background:linear-gradient(135deg,#141e30,#243b55);
+font-family:Arial;
+background:#0f172a;
 color:white;
 text-align:center;
 }
 
 header{
-font-size:42px;
+font-size:40px;
 padding:40px;
-font-weight:bold;
+background:linear-gradient(90deg,#6366f1,#22c55e);
 }
 
 .menu{
-margin-top:20px;
+margin-top:30px;
 }
 
-button{
-background:#00ff88;
+.menu button{
+background:#1e293b;
+color:white;
 border:none;
 padding:15px 30px;
 margin:10px;
 font-size:18px;
-border-radius:10px;
+border-radius:12px;
 cursor:pointer;
 transition:0.3s;
 }
 
-button:hover{
-background:#00cc66;
+.menu button:hover{
+background:#22c55e;
 transform:scale(1.1);
 }
 
-.section{
-display:none;
-padding:40px;
+.container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+margin-top:40px;
+}
+
+.card{
+background:#1e293b;
+padding:30px;
+margin:20px;
+width:250px;
+border-radius:20px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+background:#334155;
+}
+
+.telegram{
+margin-top:40px;
+}
+
+.telegram button{
+background:#3b82f6;
+border:none;
+padding:18px 35px;
 font-size:20px;
+border-radius:15px;
+cursor:pointer;
+color:white;
+}
+
+.telegram button:hover{
+background:#2563eb;
+}
+
+footer{
+margin-top:80px;
+padding:30px;
+background:#020617;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-My Website 🚀
+VANTIX WEBSITE 🚀
 </header>
 
 <div class="menu">
 
-<button onclick="showSection('home')">
+<button onclick="show('home')">
 Home
 </button>
 
-<button onclick="showSection('about')">
-About
-</button>
-
-<button onclick="showSection('projects')">
+<button onclick="show('projects')">
 Projects
 </button>
 
-<button onclick="openTelegram()">
-Telegram
+<button onclick="show('contact')">
+Contact
 </button>
 
 </div>
 
-<div id="home" class="section" style="display:block">
+<div id="home">
+
 <h2>Welcome</h2>
-<p>Welcome to my website.</p>
+
+<p>This is my personal website.</p>
+
+<div class="container">
+
+<div class="card">
+<h3>Python</h3>
+<p>My Python projects and tools.</p>
 </div>
 
-<div id="about" class="section">
-<h2>About Me</h2>
-<p>This page contains information about me.</p>
+<div class="card">
+<h3>Web</h3>
+<p>My websites and designs.</p>
 </div>
 
-<div id="projects" class="section">
-<h2>My Projects</h2>
-<p>Here you can see my projects.</p>
+<div class="card">
+<h3>Experiments</h3>
+<p>Cool things I build.</p>
 </div>
+
+</div>
+
+</div>
+
+<div id="projects" style="display:none">
+
+<h2>Projects</h2>
+
+<div class="container">
+
+<div class="card">
+<h3>Terminal Tool</h3>
+<p>Custom terminal made in Python.</p>
+</div>
+
+<div class="card">
+<h3>Website</h3>
+<p>My personal website project.</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="contact" style="display:none">
+
+<h2>Contact</h2>
+
+<div class="telegram">
+
+<button onclick="openTelegram()">
+Open Telegram
+</button>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Vantix
+</footer>
 
 <script>
 
-function showSection(id){
+function show(page){
 
-document.querySelectorAll(".section").forEach(function(section){
-section.style.display="none";
-});
+document.getElementById("home").style.display="none"
+document.getElementById("projects").style.display="none"
+document.getElementById("contact").style.display="none"
 
-document.getElementById(id).style.display="block";
+document.getElementById(page).style.display="block"
 
 }
 
 function openTelegram(){
-window.open("https://t.me/vantixzz");
+
+window.open("https://t.me/vantixzz")
+
 }
 
 </script>
