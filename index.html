@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Website</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(135deg,#141e30,#243b55);
+color:white;
+text-align:center;
+}
+
+header{
+font-size:42px;
+padding:40px;
+font-weight:bold;
+}
+
+.menu{
+margin-top:20px;
+}
+
+button{
+background:#00ff88;
+border:none;
+padding:15px 30px;
+margin:10px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#00cc66;
+transform:scale(1.1);
+}
+
+.section{
+display:none;
+padding:40px;
+font-size:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+My Website 🚀
+</header>
+
+<div class="menu">
+
+<button onclick="showSection('home')">
+Home
+</button>
+
+<button onclick="showSection('about')">
+About
+</button>
+
+<button onclick="showSection('projects')">
+Projects
+</button>
+
+<button onclick="openTelegram()">
+Telegram
+</button>
+
+</div>
+
+<div id="home" class="section" style="display:block">
+<h2>Welcome</h2>
+<p>Welcome to my website.</p>
+</div>
+
+<div id="about" class="section">
+<h2>About Me</h2>
+<p>This page contains information about me.</p>
+</div>
+
+<div id="projects" class="section">
+<h2>My Projects</h2>
+<p>Here you can see my projects.</p>
+</div>
+
+<script>
+
+function showSection(id){
+
+document.querySelectorAll(".section").forEach(function(section){
+section.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+
+}
+
+function openTelegram(){
+window.open("https://t.me/vantixzz");
+}
+
+</script>
+
+</body>
+</html>
